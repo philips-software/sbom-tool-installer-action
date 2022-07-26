@@ -1,0 +1,14 @@
+name: "sbom-tool-installer-action"
+description: "This GitHub Action is essentially an installer for the [sbom-tool](https://github.com/microsoft/sbom-tool) from Microsoft."
+author: "Philips"
+inputs:
+  version:
+    description: "Version of the sbom-tool you want to use, default is latest"
+    default: "latest"
+    required: true
+outputs:
+  tool_path:
+    description: "Path where the tool was installed to"
+runs:
+  using: "node16"
+  main: "dist/index.js"
