@@ -1,6 +1,9 @@
 name: "sbom-tool-installer-action"
-description: "This GitHub Action is essentially an installer for the [sbom-tool](https://github.com/microsoft/sbom-tool) from Microsoft."
+description: "This GitHub Action is essentially an installer for the sbom-tool from Microsoft."
 author: "Philips"
+branding:
+  icon: "command"
+  color: "blue"
 inputs:
   version:
     description: "Version of the sbom-tool you want to use, default is latest"
