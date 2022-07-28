@@ -28,6 +28,7 @@ jobs:
       - uses: philips-software/sbom-tool-installer-action@main
       - run: |
           mkdir sbom
+          npm i
           sbom-tool generate -b ./sbom -bc . -pn sbom-tool-installer-action -pv v1.0.0 -nsb https://github.com/philips-software/sbom-tool-installer-action
       - uses: actions/upload-artifact@v3
         with:
