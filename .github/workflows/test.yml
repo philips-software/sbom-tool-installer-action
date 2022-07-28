@@ -21,11 +21,16 @@ jobs:
       - uses: actions/checkout@v3
       - uses: ./
 
-  test-action: # make sure the action works on a clean machine without building
-    runs-on: windows-latest
+  test-action:
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - uses: philips-software/sbom-tool-installer-action@main
-        id: sbom-step
       - run: |
-          sbom-tool -h
+          mkdir sbom
+          npm i
+          sbom-tool generate -b ./sbom -bc . -pn sbom-tool-installer-action -pv v1.0.0 -nsb https://github.com/philips-software/sbom-tool-installer-action
+      - uses: actions/upload-artifact@v3
+        with:
+          name: sbom
+          path: ./sbom/
