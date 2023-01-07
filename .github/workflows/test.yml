@@ -10,7 +10,7 @@ jobs:
   build: # make sure build/ci work properly
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # ratchet:actions/checkout@v3
       - run: |
           npm install
       - run: |
@@ -18,19 +18,19 @@ jobs:
   test-local: # make sure the action works on a clean machine without building
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # ratchet:actions/checkout@v3
       - uses: ./
 
   test-action:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: philips-software/sbom-tool-installer-action@main
+      - uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # ratchet:actions/checkout@v3
+      - uses: philips-software/sbom-tool-installer-action@bbf0f9d956ad0d3f38af4ac3c40f006f05e22db2 # ratchet:philips-software/sbom-tool-installer-action@main
       - run: |
           mkdir sbom
           npm i
           sbom-tool generate -b ./sbom -bc . -pn sbom-tool-installer-action -ps Philips -pv v1.0.0 -nsb https://github.com/philips-software/sbom-tool-installer-action
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@0b7f8abb1508181956e8e162db84b466c27e18ce # ratchet:actions/upload-artifact@v3
         with:
           name: sbom
           path: ./sbom/
