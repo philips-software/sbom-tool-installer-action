@@ -25,7 +25,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # ratchet:actions/checkout@v3
-      - uses: philips-software/sbom-tool-installer-action@bbf0f9d956ad0d3f38af4ac3c40f006f05e22db2 # ratchet:philips-software/sbom-tool-installer-action@main
+      - uses: philips-software/sbom-tool-installer-action@main
       - run: |
           mkdir sbom
           npm i
