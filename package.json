@@ -1,6 +1,6 @@
 {
   "name": "sbom-tool-installer-action",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": true,
   "description": "This GitHub Action is essentially an installer for the sbom-tool from Microsoft.",
   "main": "lib/main.js",
