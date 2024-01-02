@@ -37,7 +37,7 @@ The easiest way to use this action is to add the following into your workflow fi
     generate-sbom:
       runs-on: windows-latest
       steps:
-        - uses: philips-software/sbom-tool-installer-action@v1.0.0
+        - uses: philips-software/sbom-tool-installer-action@v1.1.0
         - run: |
             sbom-tool -h
 ```
